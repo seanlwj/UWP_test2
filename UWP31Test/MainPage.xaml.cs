@@ -25,6 +25,33 @@ namespace UWP31Test
         public MainPage()
         {
             this.InitializeComponent();
+            ContentFrame.Navigate(typeof(DonutPage));
         }
+
+        private void TopButton_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button;
+            if (button != null)
+            {
+                if (button.Name == "DonutButton")
+                {
+                    ContentFrame.Navigate(typeof(DonutPage));
+                }
+                else if (button.Name == "CoffeeButton")
+                {
+                    ContentFrame.Navigate(typeof(CoffeePage));
+                }
+                else if (button.Name == "ScheduleButton")
+                {
+                    ContentFrame.Navigate(typeof(SchedulePage));
+                }
+                else if (button.Name == "CompleteButton")
+                {
+                    ContentFrame.Navigate(typeof(CompletePage));
+                }
+            }
+            
+        }
+
     }
 }

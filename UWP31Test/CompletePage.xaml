@@ -1,0 +1,37 @@
+﻿<Page
+    x:Class="UWP31Test.CompletePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWP31Test"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Image Style="{StaticResource LogoImageStyle2}" />
+        <RelativePanel Grid.Row="1" Margin="0,20,0,0">
+            <Image
+                Name="TicketImage"
+                Width="300"
+                RelativePanel.AlignHorizontalCenterWithPanel="True"
+                Source="Assets/ticket.jpg"/>
+            <StackPanel 
+                RelativePanel.AlignHorizontalCenterWith="TicketImage"
+                RelativePanel.AlignVerticalCenterWith="TicketImage">
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    FontSize="40"
+                    Text="Order" />
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    FontSize="60"
+                    Text="96" />
+            </StackPanel>
+        </RelativePanel>
+    </Grid>
+    
+</Page>
