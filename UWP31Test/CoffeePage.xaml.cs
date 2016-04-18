@@ -27,11 +27,11 @@ namespace UWP31Test
             this.InitializeComponent();
         }
 
-        private string roastText = "";
+        private string roastText;
 
-        private string sweetenerText = "";
+        private string sweetenerText;
 
-        private string creamText = "";
+        private string creamText;
 
         private void RoastMenuSelected(object sender, RoutedEventArgs e)
         {
@@ -50,7 +50,7 @@ namespace UWP31Test
                 {
                     roastText = item.Text;
                 }
-                OrderedMsg.Text = roastText + ((creamText == "") ? "" : " + " + creamText) + ((sweetenerText == "") ? "" : " + " + sweetenerText);
+                OrderedMsg.Text = roastText + (string.IsNullOrEmpty(creamText) ? "" : " + " + creamText) + (string.IsNullOrEmpty(sweetenerText) ? "" : " + " + sweetenerText);
 
             }
 
@@ -61,7 +61,7 @@ namespace UWP31Test
             MenuFlyoutItem item = sender as MenuFlyoutItem;
             if (item != null)
             {
-                if (roastText != "")
+                if (!string.IsNullOrEmpty(roastText))
                 {
                     if (item.Tag.ToString() == "None")
                     {
@@ -71,7 +71,7 @@ namespace UWP31Test
                     {
                         sweetenerText = item.Text;
                     }
-                    OrderedMsg.Text = roastText + ((creamText == "") ? "" : " + " + creamText) + ((sweetenerText == "") ? "" : " + " + sweetenerText);
+                    OrderedMsg.Text = roastText + (string.IsNullOrEmpty(creamText) ? "" : " + " + creamText) + (string.IsNullOrEmpty(sweetenerText) ? "" : " + " + sweetenerText);
                 }
             }
         }
@@ -81,7 +81,7 @@ namespace UWP31Test
             MenuFlyoutItem item = sender as MenuFlyoutItem;
             if (item != null)
             {
-                if (roastText != "")
+                if (!string.IsNullOrEmpty(roastText))
                 {
                     if (item.Tag.ToString() == "None")
                     {
@@ -91,7 +91,7 @@ namespace UWP31Test
                     {
                         creamText = item.Text;
                     }
-                    OrderedMsg.Text = roastText + ((creamText == "") ? "" : " + " + creamText) + ((sweetenerText == "") ? "" : " + " + sweetenerText);
+                    OrderedMsg.Text = roastText + (string.IsNullOrEmpty(creamText) ? "" : " + " + creamText) + (string.IsNullOrEmpty(sweetenerText) ? "" : " + " + sweetenerText);
                 }
             }
         }

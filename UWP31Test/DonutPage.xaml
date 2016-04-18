@@ -10,28 +10,26 @@
     <Grid Background="Red">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Image
-            Grid.ColumnSpan="2"
             Style="{StaticResource LogoImageStyle1}"/>
         <TextBlock
             Grid.Row="1"
             Text="Original Glazed Count:"
             Style="{StaticResource TextBlockStyle1}"
-            Margin="20,0,0,0"/>
+            Margin="20,20,0,20"/>
         <Slider
             Grid.Row="1"
             Grid.Column="1"
-            Width="300"
-            Margin="20,0,10,0"
+            Margin="20,20,10,20"
             Maximum="24"
-            HorizontalAlignment="Left"
             VerticalAlignment="Center"/>
         <TextBlock
             Grid.Row="2"
@@ -41,9 +39,7 @@
         <Slider
             Grid.Row="2"
             Grid.Column="1"
-            Width="300"
             Margin="20,0,10,0"
-            HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Maximum="24"/>
     </Grid>
