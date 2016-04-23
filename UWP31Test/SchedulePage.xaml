@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="UWP31Test.SchedulePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWP31Test"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="Green">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Image Style="{StaticResource LogoImageStyle1}" />
+        <RelativePanel Grid.Row="1">
+            <TextBlock
+                Margin="20,20,0,0"
+                Name="DateTextBlock"
+                Style="{StaticResource TextBlockStyle1}"
+                Text="Pickup:"/>
+            <CalendarDatePicker
+                RelativePanel.RightOf="DateTextBlock"
+                Name="MyCalendar"
+                Margin="20,20,0,0"
+                PlaceholderText="select a date"/>
+            <TimePicker 
+                RelativePanel.Below="MyCalendar"
+                RelativePanel.AlignLeftWith="MyCalendar"
+                ClockIdentifier="12HourClock"
+                Margin="20,20,0,0"/>
+        </RelativePanel>
+    </Grid>
+</Page>
